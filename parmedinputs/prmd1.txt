@@ -1,0 +1,3 @@
+chamber -top toppar/top_all22_prot.rtf -top toppar/top_all36_na.rtf -top toppar/top_all36_lipid.rtf -top toppar/top_all36_carb.rtf -top toppar/top_all36_cgenff.rtf -param toppar/par_all22_prot.prm -param toppar/par_all36_na.prm -param toppar/par_all36_carb.prm -param toppar/par_all36_lipid.prm -param toppar/par_all36_cgenff.prm -str toppar/toppar_water_ions.str -str toppar/toppar_phmd_c22_foramber.str -psf hhv1.psf -crd hhv1.crd -box 83.13,83.13,103.25,90,90,90
+parmout hhv1.parm7 hhv1.rst7
+go

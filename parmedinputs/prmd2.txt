@@ -1,0 +1,4 @@
+parm hhv1.parm7
+hmassrepartition
+outparm hhv1_0.parm7
+quit
