@@ -1,20 +1,10 @@
 grep PROA system.pdb > proah.pdb
-grep PROB system.pdb > probh.pdb
-grep PROC system.pdb > proch.pdb
-grep PROD system.pdb > prodh.pdb
-grep PROE system.pdb > proeh.pdb
-grep PROF system.pdb > profh.pdb
-grep PROG system.pdb > progh.pdb
-grep PROH system.pdb > prohh.pdb
-grep PROI system.pdb > proih.pdb
 grep POPC system.pdb > memb.pdb
-sed -i '/TER  /d' memb.pdb
-
-
-python noh.py
-
 grep TIP3 system.pdb > bwat.pdb
+grep CLA system.pdb > cla.pdb
+grep SOD system.pdb > sod.pdb
 
+sed -i '/TER  /d' memb.pdb
 sed -i '/TER  /d' bwat.pdb
 sed -i 's/OH2 TIP /OH2 TIP3/g' bwat.pdb
 sed -i 's/H1  TIP /H1  TIP3/g' bwat.pdb
@@ -22,13 +12,21 @@ sed -i 's/H2  TIP /H2  TIP3/g' bwat.pdb
 sed -i 's/  0.00           /  0.00      TIP3 /g' bwat.pdb
 sed -i "s/TIP3S/TIP3 /g" bwat.pdb
 sed -i "s/SOLV/TIP3 /g" bwat.pdb
+python noh.py
+
+sed -i 's/HSE/HSP/g' proa.pdb
+sed -i 's/HSD/HSP/g' proa.pdb
+sed -i '/H.*HSP/d' proa.pdb
+
+
 python sepwat.py
 python sepmemb.py
+python sepprot.py
+python sepions.py
+
 
 for p in "a" "b" "c" "d" "e" "f" "g" "h" "i"; do
-sed -i 's/HSE/HSP/g' pro${p}.pdb
-sed -i 's/HSD/HSP/g' pro${p}.pdb
-sed -i '/H.*HSP/d' pro${p}.pdb
+
 done
 #sed -i 's/  0.00           /  0.00      PROT /g' proa.pdb
 
@@ -36,7 +34,7 @@ done
 
 
 
-python sepprot.py
+
 mv proa1.pdb proa.pdb
 mv prob1.pdb prob.pdb
 mv proc1.pdb proc.pdb
@@ -46,11 +44,10 @@ mv prof1.pdb prof.pdb
 mv prog1.pdb prog.pdb
 mv proh1.pdb proh.pdb
 mv proi1.pdb proi.pdb
-grep CLA system.pdb > cla.pdb
-grep SOD system.pdb > sod.pdb
 
 
-python sepions.py
+
+
 mv sod1.pdb sod.pdb
 mv cla1.pdb cla.pdb
 
