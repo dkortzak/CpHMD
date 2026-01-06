@@ -1,0 +1,20 @@
+stream toppar.str
+
+open unit 1 read form name memb2.pdb
+read sequ pdb unit 1
+!gene MEMB setup warn first none last none noang nodihe
+gene MEMB setup warn first none last none
+
+open unit 1 read card name memb2.pdb
+read coor pdb unit 1 resid
+
+IOFOrmat EXTEnded
+
+open write unit 1 card name memb2.psf
+write psf  unit 1 card
+
+open write card unit 1 name memb2.crd
+write coor unit 1 card
+
+stop
+

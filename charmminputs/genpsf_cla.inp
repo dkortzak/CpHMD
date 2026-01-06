@@ -1,0 +1,19 @@
+stream toppar.str
+
+open unit 1 read form name cla.pdb
+read sequ pdb unit 1
+gene IONS setup warn first none last none
+
+open unit 1 read card name cla.pdb
+read coor pdb unit 1 resid
+
+IOFOrmat EXTEnded
+
+open write unit 1 card name cla1.psf
+write psf  unit 1 card
+
+open write card unit 1 name cla1.crd
+write coor unit 1 card
+
+stop
+

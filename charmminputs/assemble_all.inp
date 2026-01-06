@@ -1,0 +1,325 @@
+* Assemble protein, lipid bilayer, water, ion sequentially
+* NO minimization here, equilibrate in CpHMD
+* Adapted from CHARMM-GUI script
+* Usage: charmm < step2_assemble.inp > step2_assemble.out
+*
+
+!!!!!!!!!!!!!!!!!!!!!
+!! Global settings !!
+!!!!!!!!!!!!!!!!!!!!!
+
+! Change dimension
+! ----------------
+dimens chsize 2000000
+
+! Set variables
+! -------------
+! In general only settings below need to be modified
+! -------------
+set toppar = toppar.str
+
+set name   = 9-peptides_membrane             ! system name
+set prot1   = proa_h        ! protein      input *.psf/crd
+set prot2   = prob_h        ! protein      input *.psf/crd
+set prot3   = proc_h        ! protein      input *.psf/crd
+set prot4   = prod_h        ! protein      input *.psf/crd
+set prot5   = proe_h        ! protein      input *.psf/crd
+set prot6   = prof_h        ! protein      input *.psf/crd
+set prot7   = prog_h        ! protein      input *.psf/crd
+set prot8   = proh_h        ! protein      input *.psf/crd
+set prot9   = proi_h        ! protein      input *.psf/crd
+set lip1    = memb1            ! lipid        input *.psf/crd
+set lip2    = memb2            ! lipid        input *.psf/crd
+set lip3    = memb3            ! lipid        input *.psf/crd
+set lip4    = memb4            ! lipid        input *.psf/crd
+set lip5    = memb5            ! lipid        input *.psf/crd
+set lip6    = memb6            ! lipid        input *.psf/crd
+
+set wata   = wat1           ! water        input *.psf/crd
+set watb   = wat2
+set pion   = sod1             ! positive ion input *.psf/crd
+set nion   = cla1             ! negative ion input *.psf/crd
+set out    = 9-peptides_membrane           ! output             *.psf/crd/pdb
+
+! Read topology and parameter files
+! ---------------------------------
+stream @toppar
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! Read in each component sequentially !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Read in protein
+! ---------------
+open unit 1 read card name @prot1.psf
+read psf  card unit 1
+close unit 1
+
+open unit 1 read card name @prot1.crd
+read coor card unit 1
+close unit 1
+
+open unit 1 read card name @prot2.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot2.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot3.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot3.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot4.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot4.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot5.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot5.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot6.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot6.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot7.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot7.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot8.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot8.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot9.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @prot9.crd
+read coor card unit 1 append
+close unit 1
+
+! Read in lipids 
+! --------------
+open unit 1 read card name @lip1.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @lip1.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name @lip2.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @lip2.crd
+read coor card unit 1 append
+close unit 1
+open unit 1 read card name @lip3.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @lip3.crd
+read coor card unit 1 append
+close unit 1
+open unit 1 read card name @lip4.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @lip4.crd
+read coor card unit 1 append
+close unit 1
+open unit 1 read card name @lip5.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @lip5.crd
+read coor card unit 1 append
+close unit 1
+open unit 1 read card name @lip6.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @lip6.crd
+read coor card unit 1 append
+close unit 1
+
+! Read in waters
+! --------------
+! Read Segment A 
+! --------------- 
+open unit 1 read card name wat1.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name wat1.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name wat2.psf
+read psf card unit 1 append
+close unit 1
+
+open unit 1 read card name wat2.crd
+read coor card unit 1 append
+close unit 1
+
+
+open unit 1 read card name wat3.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name wat3.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name wat4.psf
+read psf card unit 1 append
+close unit 1
+
+open unit 1 read card name wat4.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name wat5.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name wat5.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name wat6.psf
+read psf card unit 1 append
+close unit 1
+
+open unit 1 read card name wat6.crd
+read coor card unit 1 append
+close unit 1
+
+
+open unit 1 read card name wat7.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name wat7.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name wat8.psf
+read psf card unit 1 append
+close unit 1
+
+open unit 1 read card name wat8.crd
+read coor card unit 1 append
+close unit 1
+
+
+
+
+! Read in ions
+! ------------
+open unit 1 read card name @pion.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @pion.crd
+read coor card unit 1 append
+close unit 1
+
+open unit 1 read card name @nion.psf
+read psf  card unit 1 append
+close unit 1
+
+open unit 1 read card name @nion.crd
+read coor card unit 1 append
+close unit 1
+
+! Build Crystal and PBC 
+!---------------
+!coor orient 
+!coor stat sele segid MEMB end ! make sure the z-coordinate is close to zero 
+
+coor stat sele segid TIP3 .and. type OH2 end 
+calc X = ?Xmax - ?Xmin 
+calc Y = ?YMax - ?Ymin 
+calc XY = (@X + @Y) / 2
+calc Z = ?Zmax - ?Zmin 
+
+set BOXtype = RECT
+set XTLtype = TETRAGONAL
+set A = @XY 
+set B = @XY
+set C = @Z 
+set alpha = 90.0 
+set beta  = 90.0
+set gamma = 90.0
+
+coor convert aligned symmetric @A @B @C @alpha @beta @gamma
+coor copy comp 
+
+crystal DEFINE @XTLtype @A @B @C @alpha @beta @gamma 
+crystal build noper 0 cutoff 14.0                      !Build Crystal 
+open write card unit 1 name crystal_image.str         !Build Image 
+crystal write card unit 1 
+
+
+!!!!!!!!!!!!!!!!!!!
+!! Write outputs !!
+!!!!!!!!!!!!!!!!!!!
+
+! Write psf, crd and pdb
+! ----------------------
+open unit 90 write card name @out.psf
+write psf  card unit 90
+* PSF for @name
+*
+ 
+open unit 90 write card name @out.crd
+write coor card unit 90
+* CRD for @name
+*
+ 
+open unit 90 write card name @out.pdb
+write coor  pdb unit 90
+* PDB for @name
+*
+ 
+open unit 90 write card name @out.pbc 
+write title unit 90 
+* set BOXtype = @BOXtype 
+* set XTLtype = @XTLtype
+* set A = @A
+* set B = @B
+* set C = @C
+* set Alpha = @alpha
+* set Beta  = @beta
+* set Gamma = @gamma
+*
+ 
+stop

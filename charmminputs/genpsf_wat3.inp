@@ -1,0 +1,18 @@
+stream toppar.str
+
+open unit 1 read form name wat3.pdb
+read sequ pdb unit 1
+gene TIP3 setup warn first none last none noang nodihe
+
+open unit 1 read card name wat3.pdb
+read coor pdb unit 1 resid
+
+IOFOrmat EXTEnded
+
+open write unit 1 card name wat3.psf
+write psf  unit 1 card
+
+open write card unit 1 name wat3.crd
+write coor unit 1 card
+
+stop
