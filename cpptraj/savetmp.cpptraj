@@ -1,0 +1,8 @@
+parm ../wes/common_files/hhv1.parm7
+trajin full_unw.nc 2500 2500
+reference ../wes/common_files/hhv1.pdb
+unwrap
+#autoimage
+#align :1-134@CA,C,O,N reference
+trajout frame2500.pdb
+go

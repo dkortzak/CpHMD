@@ -1,0 +1,55 @@
+parm /home/danko/sims/Hv1/AF1/wes/common_files/hhv1.parm7
+#trajin parent.rst
+trajin full.nc
+reference /home/danko/sims/Hv1/AF1/wes/common_files/hhv1.pdb
+autoimage
+align :1-134@CA,C,O,N reference
+nativecontacts name mindis0 @1660,1662 @2009,2012,2015 mindist
+nativecontacts name mindis1 :29 @2009,2012,2015 mindist
+nativecontacts name mindis2 @391,393 @2009,2012,2015 mindist
+nativecontacts name mindis3 @391,393 @2076,2079,2082 mindist
+nativecontacts name mindis4 @1487,1489 @2076,2079,2082 mindist
+nativecontacts name mindis5 @1487,1489 @2126,2129,2132 mindist
+nativecontacts name mindis6 @1660,1662 @2126,2129,2132 mindist 
+nativecontacts name mindis7 @1660,1662 @2076,2079,2082 mindist
+nativecontacts name mindis8 @391,393 @2126,2129,2132 mindist
+nativecontacts name mindis9 :81 @2126,2129,2132 mindist
+nativecontacts name mindis10 :33 @2009,2012,2015 mindist
+nativecontacts name mindis11 :29 @2076,2079,2082 mindist
+
+nativecontacts name mindis12 :81 @2009,2012,2015 mindist
+nativecontacts name mindis13 :84 @2009,2012,2015 mindist
+
+nativecontacts name mindis14 :33 @2076,2079,2082 mindist
+nativecontacts name mindis15 :81 @2076,2079,2082 mindist
+
+
+nativecontacts name mindis16 :22 @2126,2129,2132 mindist 
+nativecontacts name mindis17 :29 @2126,2129,2132 mindist 
+nativecontacts name mindis18 :33 @2126,2129,2132 mindist 
+run
+write mindis_R1sc_D185sc0.dat mindis0[mindist]
+write mindis_R1sc_E119sc0.dat mindis1[mindist]
+write mindis_R1sc_D112sc0.dat mindis2[mindist]
+write mindis_R2sc_D112sc0.dat mindis3[mindist]
+write mindis_R2sc_D174sc0.dat mindis4[mindist]
+write mindis_R3sc_D174sc0.dat mindis5[mindist]
+write mindis_R3sc_D185sc0.dat mindis6[mindist]
+write mindis_R2sc_D185sc0.dat mindis7[mindist]
+write mindis_R3sc_D112sc0.dat mindis8[mindist]
+write mindis_R3sc_D171sc0.dat mindis9[mindist]
+write mindis_R1sc_D123sc0.dat mindis10[mindist]
+write mindis_R2sc_E119sc0.dat mindis11[mindist]
+
+write mindis_R1sc_D171sc.dat mindis12[mindist]
+write mindis_R1sc_D174sc.dat mindis13[mindist]
+
+write mindis_R2sc_D123sc.dat mindis14[mindist]
+write mindis_R2sc_D171sc.dat mindis15[mindist]
+
+
+write mindis_R3sc_D112sc.dat mindis16[mindist]
+write mindis_R3sc_D119sc.dat mindis17[mindist]
+write mindis_R3sc_D123sc.dat mindis18[mindist]
+run
+exit

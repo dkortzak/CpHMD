@@ -1,0 +1,6 @@
+parm ../wes/common_files/hhv1.parm7
+trajin full.nc lastframe
+strip !(:WAT|:40,74,22,29,95,81,84,63,33,102,118,115,121)
+trajout redsys.pdb
+go
+quit

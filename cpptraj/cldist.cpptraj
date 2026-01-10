@@ -1,0 +1,43 @@
+parm /home/danko/sims/Hv1/AF1/wes/common_files/hhv1.parm7
+#trajin parent.rst
+trajin full.nc
+reference /home/danko/sims/Hv1/AF1/wes/common_files/hhv1.pdb
+autoimage
+align :1-134@CA,C,O,N reference
+nativecontacts name mindis0 :CLA @2009,2012,2015 mindist
+
+nativecontacts name mindis3 :CLA @2076,2079,2082 mindist
+
+nativecontacts name mindis5 :CLA @2126,2129,2132 mindist
+nativecontacts name mindis1 :CLA :81 mindist
+nativecontacts name mindis2 :CLA :53 mindist
+nativecontacts name mindis4 :CLA :50 mindist
+nativecontacts name mindis6 :CLA :25 mindist 
+nativecontacts name mindis7 :CLA :111 mindist
+nativecontacts name mindis8 :CLA :60 mindist 
+nativecontacts name mindis9 :CLA :63 mindist
+nativecontacts name mindis10 :CLA :67 mindist
+nativecontacts name mindis11 :CLA :95 mindist
+nativecontacts name mindis12 :CLA :117 mindist
+nativecontacts name mindis13 :CLA :29 mindist
+nativecontacts name mindis14 :CLA :84 mindist
+nativecontacts name mindis15 :CLA :22 mindist
+run
+write mindis_R1sc_cl.dat mindis0[mindist]
+write mindis_81_cl.dat mindis1[mindist]
+write mindis_53_cl.dat mindis2[mindist]
+write mindis_R2sc_cl.dat mindis3[mindist]
+write mindis_50_cl.dat mindis4[mindist]
+write mindis_R3sc_cl.dat mindis5[mindist]
+write mindis_25_cl.dat mindis6[mindist]
+write mindis_111_cl.dat mindis7[mindist]
+write mindis_60_cl.dat mindis8[mindist]
+write mindis_63_cl.dat mindis9[mindist]
+write mindis_67_cl.dat mindis10[mindist]
+write mindis_95_cl.dat mindis11[mindist]
+write mindis_117_cl.dat mindis12[mindist]
+write mindis_29_cl.dat mindis13[mindist]
+write mindis_84_cl.dat mindis14[mindist]
+write mindis_22_cl.dat mindis15[mindist]
+run
+exit

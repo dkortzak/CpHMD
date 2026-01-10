@@ -1,0 +1,8 @@
+parm ../wes/common_files/hhv1.parm7
+trajin full.nc
+reference ../wes/common_files/hhv1.pdb
+autoimage
+align :1-134@CA,C,O,N reference
+vector mask :9-35,44-70,79-101@CA,C,O,N :115-118@CA,C,O,N out rc.dat
+vector mask :19,60,88@CA,C,O,N :118@CA,C,O,N out R2_HG.dat
+go

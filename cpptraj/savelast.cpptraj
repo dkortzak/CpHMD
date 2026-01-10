@@ -1,0 +1,7 @@
+parm ../wes/common_files/hhv1.parm7
+trajin seg8.nc lastframe 
+reference ../wes/common_files/hhv1.pdb
+autoimage
+align :1-134@CA,C,O,N reference
+trajout lastframe.pdb
+go

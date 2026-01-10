@@ -1,0 +1,11 @@
+parm /home/danko/sims/Hv1/AF1/wes/common_files/hhv1.parm7
+#trajin parent.rst
+trajin full.nc 1 1
+#reference /home/danko/sims/Hv1/AF1/wes/common_files/hhv1.pdb
+autoimage
+#align :1-134@CA,C,O,N reference
+watershell @391,393  wshell.dat lower 3 upper 5
+density out Density.txt delta 1.0 z number ":WAT"
+#trajout control.nc
+run
+exit

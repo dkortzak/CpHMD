@@ -1,0 +1,10 @@
+parm /home/danko/sims/Hv1/AF1/wes/common_files/hhv1.parm7
+trajin full.nc
+reference /home/danko/sims/Hv1/AF1/wes/common_files/hhv1.pdb
+autoimage
+align :1-134@CA,C,O,N reference
+vector VH @2318,2304,2282 @2139,2158,2177 #CA of resid R133,T132,K131-I122,I123,N124
+vector VM @2065,2041,2022 @1896,1877,1867 #CA of resid R118,W117,L116-G109,L108,A107
+vectormath vec1 VM vec2 VH out s4_tilt.dat dotangle
+run
+exit

@@ -1,0 +1,8 @@
+parm /home/danko/sims/Hv1/AF1/wes/common_files/hhv1.parm7
+
+trajin full.nc lastframe
+
+vector coords  out test_coord.dat :22@CA :22@CA
+charge coords  out test_charge.dat :22@CA :22@CA
+run
+exit

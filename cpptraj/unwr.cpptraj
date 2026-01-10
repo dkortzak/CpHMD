@@ -1,0 +1,8 @@
+parm ../wes/common_files/hhv1.parm7
+trajin corrected.nc
+#reference ../wes/common_files/hhv1.pdb
+unwrap
+#autoimage
+#align :1-134@CA,C,O,N reference
+trajout full_unw.nc
+go

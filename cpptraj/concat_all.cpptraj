@@ -1,0 +1,9 @@
+parm ../wes/common_files/hhv1.parm7
+trajin full.nc 
+trajin ../open3_2/full.nc 
+trajin ../open3_3/full.nc
+autoimage
+trajout full_all.nc
+go
+quit
+

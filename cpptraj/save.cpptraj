@@ -1,0 +1,16 @@
+parm ../wes/common_files/hhv1.parm7
+trajin full.nc #3941 3941
+#reference ../wes/common_files/hhv1.pdb
+#obile :POPG,:POPE
+autoimage origin
+image bymol familiar 
+
+
+#unwrap
+#center :WAT 
+#image center
+#image origin center familiar
+#translate z 52
+#align :1-134@CA,C,O,N reference
+trajout corrected.nc
+go
